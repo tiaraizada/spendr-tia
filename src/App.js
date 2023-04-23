@@ -1,24 +1,26 @@
-import SideBar from "components/Sidebar/index";
-import Chartboard from "container/chartboard";
-import Dashboard from "container/dashboard";
-import ManageBills from "container/manageBills";
-import ViewBills from "container/viewBills";
-import "./App.css";
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <SideBar>
-      {/* {links.map((link) => (
-        <main id={link.title} className="section" key={link.id}>
-          {link.title}
-        </main>
-      ))} */}
-      <Dashboard />
-      <ViewBills />
-      <Chartboard />
-      <ManageBills />
-    </SideBar>
-  );
+import LandingPage from './components/pages/LandingPage'
+import LoginPage from './components/pages/LoginPage'
+import RegisterPage from './components/pages/RegisterPage'
+import ForgetPasswordPage from './components/pages/ForgetPasswordPage'
+import HomePage from './components/pages/HomePage'
+
+import './App.css'
+
+export default function App() {
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={ LandingPage } />
+                    <Route path="/login" component={ LoginPage } />
+                    <Route path="/register" component={ RegisterPage } />
+                    <Route path="/forget-password" component={ ForgetPasswordPage } />
+                    <Route path="/home" component={ HomePage } />
+                </Switch>
+            </div>
+        </Router>
+    )
 }
-
-export default App;
