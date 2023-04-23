@@ -8,7 +8,6 @@ import ForgetPasswordPage from './components/pages/ForgetPasswordPage'
 import HomePage from './components/pages/HomePage'
 
 import './App.css'
-import { Router } from '../node_modules/react-router-dom/cjs/react-router-dom.min'
 
 export default function App() {
     return (
